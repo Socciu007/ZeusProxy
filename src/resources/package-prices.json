@@ -1,0 +1,98 @@
+[
+    {
+        "isPopular": false,
+        "title": "Plan 1",
+        "price": 5,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 1,
+            "to": 3
+        },
+        "duration": 60
+    },
+    {
+        "isPopular": false,
+        "title": "Plan 2",
+        "price": 4.5,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 4,
+            "to": 10
+        },
+        "duration": 60
+    },
+    {
+        "isPopular": true,
+        "title": "Plan 3",
+        "price": 4,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 11,
+            "to": 30
+        },
+        "duration": 60
+    },
+    {
+        "isPopular": false,
+        "title": "Plan 4",
+        "price": 3.5,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 31,
+            "to": 50
+        },
+        "duration": 60
+    },
+    {
+        "isPopular": false,
+        "title": "Plan 5",
+        "price": 3.2,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 51,
+            "to": 100
+        },
+        "duration": 60
+    },
+    {
+        "isPopular": false,
+        "title": "Plan 6",
+        "price": 3,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 101,
+            "to": 200
+        },
+        "duration": 90
+    },
+    {
+        "isPopular": false,
+        "title": "Plan 7",
+        "price": 2.8,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 201,
+            "to": 500
+        },
+        "duration": 90
+    },
+    {
+        "isPopular": false,
+        "title": "Plan 8",
+        "price": 2.5,
+        "currency": "$",
+        "port-quantity": "Unlimited",
+        "bandwidth": {
+            "from": 501,
+            "to": 1000
+        },
+        "duration": 90
+    }
+]

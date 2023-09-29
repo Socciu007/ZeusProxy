@@ -1,0 +1,3 @@
+User-Agent: *
+Sitemap: https://zeusproxy.com/sitemap.xml
+Disallow: /loading-payment

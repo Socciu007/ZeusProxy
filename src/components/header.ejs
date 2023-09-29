@@ -1,0 +1,117 @@
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <a href="/" class="d-flex align-items-center">
+      <img
+        class="logoimg"
+        src="images/zeus-proxy-logo.png"
+        alt="zeusproxy-logo"
+      />
+      <b class="logotxt">ZEUSPROXY</b>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <a class="nav-link nav-home fw-bold" onclick="srollToSection('#home')">
+          HOME
+        </a>
+        <a class="nav-link nav-usecases" onclick="srollToSection('#usecases')">
+          USE CASES
+        </a>
+        <a class="nav-link nav-features" onclick="srollToSection('#features')">
+          FEATURES
+        </a>
+        <a class="nav-link nav-pricing" onclick="srollToSection('#pricing')">
+          PRICING
+        </a>
+        <a class="nav-link nav-faq" onclick="srollToSection('#faq')"> FAQ </a>
+        <a href="https://app.zeusproxy.com/" target="_blank" class="btnSignin">
+          SIGN IN
+        </a>
+      </ul>
+    </div>
+  </nav>
+</header>
+<script>
+  function srollToSection(id) {
+    if (id == "#home") {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const section = document.querySelector(id);
+    let space = 50;
+    if (window.innerWidth < 992) space = 300;
+    window.scrollTo(0, section.offsetTop - space);
+  }
+  let usecases = 0;
+  let features = 0;
+  let pricing = 0;
+  let faq = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    usecases = document.querySelector("#usecases").offsetTop - 90;
+    features = document.querySelector("#features").offsetTop - 90;
+    pricing = document.querySelector("#pricing").offsetTop - 90;
+    faq = document.querySelector("#faq").offsetTop - 90;
+  });
+  window.addEventListener("scroll", (event) => {
+    const header = document.querySelector("header");
+    if (window.scrollY > 120) {
+      if (!header.classList.contains("headerBG"))
+        document.querySelector("header").classList.add("headerBG");
+    } else {
+      if (header.classList.contains("headerBG"))
+        document.querySelector("header").classList.remove("headerBG");
+    }
+    if (faq != 0 && window.scrollY > faq) {
+      if (!document.querySelector(".nav-faq").classList.contains("fw-bold")) {
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((element) => element.classList.remove("fw-bold"));
+        document.querySelector(".nav-faq").classList.add("fw-bold");
+      }
+    } else if (pricing != 0 && window.scrollY > pricing) {
+      if (
+        !document.querySelector(".nav-pricing").classList.contains("fw-bold")
+      ) {
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((element) => element.classList.remove("fw-bold"));
+        document.querySelector(".nav-pricing").classList.add("fw-bold");
+      }
+    } else if (features != 0 && window.scrollY > features) {
+      if (
+        !document.querySelector(".nav-features").classList.contains("fw-bold")
+      ) {
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((element) => element.classList.remove("fw-bold"));
+        document.querySelector(".nav-features").classList.add("fw-bold");
+      }
+    } else if (usecases != 0 && window.scrollY > usecases) {
+      if (
+        !document.querySelector(".nav-usecases").classList.contains("fw-bold")
+      ) {
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((element) => element.classList.remove("fw-bold"));
+        document.querySelector(".nav-usecases").classList.add("fw-bold");
+      }
+    } else {
+      if (!document.querySelector(".nav-home").classList.contains("fw-bold")) {
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((element) => element.classList.remove("fw-bold"));
+        document.querySelector(".nav-home").classList.add("fw-bold");
+      }
+    }
+  });
+</script>

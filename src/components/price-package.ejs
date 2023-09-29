@@ -1,0 +1,192 @@
+<div class="section" style="background-color:  #FFFEFD;">
+    <h3 id="pricing" class="titleSection">
+        Residential Proxies Pricing
+    </h3>
+    <p class="subtitle-section">
+        The highest quality with the lowest price ever!
+    </p>
+
+    <div class="packages">
+        <div class="packages-row-head">
+            <div class="head-pricing"></div>
+            <% packages.forEach(function(item) { %>
+                <div class="pricingItem <%= item["isPopular"] ? "pricingItemMost" : "" %>">
+                    <div class="mostPopular">
+                        <%= item["isPopular"] ? "Most popular" : "" %>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <div class="packages-row-body">
+            <div class="head-pricing">
+                <div class="packageName invisible">
+                    plan
+                </div>
+                <a href="https://app.zeusproxy.com/" target="_blank" class="btnOrderBlue invisible">
+                    Start Now
+                </a>
+                <div class="packagePrice">
+                    Price
+                </div>
+                <div class="package">
+                    GB
+                </div>
+                <div class="package">
+                    Port quantity
+                </div>
+                <div class="package">
+                    Duration
+                </div>
+            </div>
+            <% packages.slice(0, 5).forEach(function(item) { %>
+                <div class="pricingItem <%= item["isPopular"] ? "pricingItemMost" : "" %>">
+                    <div class="packageName">
+                        <%= item.title%>
+                    </div>
+                    <a href="https://app.zeusproxy.com/" target="_blank" class="btnOrderBlue">
+                        Start Now
+                    </a>
+                    <div class="packagePrice">
+                        <div class="price">
+                            <%= item["currency"]%>
+                                <%= item["price"]%>
+                        </div>
+                        <div class="unit">/ GB</div>
+                    </div>
+                    <div class="package">
+                        <%=item["bandwidth"]["from"]%> - <%= item["bandwidth"]["to"]%> GB
+                    </div>
+                    <div class="package">
+                        <%=item["port-quantity"]%>
+                    </div>
+                    <div class="package">
+                        <%=item["duration"]%> days
+                    </div>
+                </div>
+                <% }); %>
+                    <!-- <div class="pricingItem pricingItemCustom">
+                        <div class="packageName">
+                            Custom plan
+                        </div>
+                        <a onclick="$crisp.push(['do', 'chat:open'])" class="btnOrderYellow">
+                            Contact us
+                        </a>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13"
+                                    fill="none">
+                                    <path d="M2 6.96907L6.17617 11L15.5 2" stroke="#34C38F" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Best price
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13"
+                                    fill="none">
+                                    <path d="M2 6.96907L6.17617 11L15.5 2" stroke="#34C38F" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Unlimited IPs
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13"
+                                    fill="none">
+                                    <path d="M2 6.96907L6.17617 11L15.5 2" stroke="#34C38F" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                VIP support
+                            </li>
+                        </ul>
+                    </div> -->
+
+
+        </div>
+        <div class="packages-row-free">
+            <% packages.slice(0, 5).forEach(function(item) { %>
+                <div class="pricingItem2 pricingItemMobile <%= item["isPopular"] ? "pricingItemMost" : "" %>">
+                    <div class="packageName">
+                        <%= item.title %>
+                    </div>
+                    <a href="https://app.zeusproxy.com/" target="_blank" class="btnOrderBlue">
+                        Start Now
+                    </a>
+                    <div class="packagePrice">
+                        <div class="price">
+                            <%= item["currency"]%>
+                                <%= item["price"]%>
+                        </div>
+                        <div class="unit">/ GB</div>
+                    </div>
+                    <div class="package fw-bold">
+                        <%=item["bandwidth"]["from"]%> - <%= item["bandwidth"]["to"]%> GB
+                    </div>
+                    <div class="package">
+                        <b>
+                            <%=item["duration"]%>
+                        </b> days
+                    </div>
+                </div>
+                <% }) %>
+
+                    <% packages.slice(5).forEach(function(item) { %>
+                        <div class="pricingItem2">
+                            <div class="packageName">
+                                <%= item.title %>
+                            </div>
+                            <a href="https://app.zeusproxy.com/" target="_blank" class="btnOrderBlue">
+                                Start Now
+                            </a>
+                            <div class="packagePrice">
+                                <div class="price">
+                                    <%= item["currency"]%>
+                                        <%= item["price"]%>
+                                </div>
+                                <div class="unit">/ GB</div>
+                            </div>
+                            <div class="package fw-bold">
+                                <%=item["bandwidth"]["from"]%> - <%= item["bandwidth"]["to"]%> GB
+                            </div>
+                            <div class="package">
+                                <b>
+                                    <%=item["duration"]%>
+                                </b> days
+                            </div>
+                        </div>
+                        <% }) %>
+                            <div class="pricingItem2 pricingItemCustom">
+                                <div class="packageName fw-bold">
+                                    Custom plan
+                                </div>
+                                <button class="btnOrderYellow chat-open" onclick="$crisp.push(['do', 'chat:open'])">
+                                Contact us
+                                </button>
+                                <ul>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13"
+                                            viewBox="0 0 17 13" fill="none">
+                                            <path d="M2 6.96907L6.17617 11L15.5 2" stroke="#34C38F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        Best price
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13"
+                                            viewBox="0 0 17 13" fill="none">
+                                            <path d="M2 6.96907L6.17617 11L15.5 2" stroke="#34C38F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        Unlimited IPs
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13"
+                                            viewBox="0 0 17 13" fill="none">
+                                            <path d="M2 6.96907L6.17617 11L15.5 2" stroke="#34C38F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        VIP support
+                                    </li>
+                                </ul>
+                            </div>
+        </div>
+    </div>
+</div>

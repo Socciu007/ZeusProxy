@@ -1,0 +1,105 @@
+<footer>
+  <div class="footer">
+    <div>
+      <a href="/" class="row-align-center mb-md-2">
+        <img
+          class="logo"
+          src="/images/zeus-proxy-logo.png"
+          alt="zeusproxy-logo"
+        />
+        <h5 class="name">ZEUSPROXY</h5>
+      </a>
+      <p class="copyright d-md-block d-none">Copyright @ 2023</p>
+    </div>
+
+    <div class="policy">
+      <a href="/term-of-services" target="_blank" class="link">
+        Term of services
+      </a>
+      <a href="/privacy-policy" target="_blank" class="link">
+        Privacy Policy
+      </a>
+      <a href="/refund-policy" target="_blank" class="link"> Refund Policy </a>
+    </div>
+    <div class="support">
+      <div class="supportItem">
+        <a href="https://www.youtube.com/@zeusproxy" target="_blank">
+          <img src="/images/icon-youtube.png" alt="youtube" />
+        </a>
+      </div>
+      <div class="supportItem">
+        <a href="https://www.facebook.com/zeusproxyglobal" target="_blank">
+          <img src="/images/icon-facebook.png" alt="facebook" />
+        </a>
+      </div>
+      <div class="supportItem">
+        <a href="https://twitter.com/ZeusProxyGlobal" target="_blank">
+          <img src="/images/icon-twister.png" alt="twister" />
+        </a>
+      </div>
+    </div>
+    <p class="copyright d-md-block d-md-none">Copyright @ 2023</p>
+  </div>
+</footer>
+
+<script>
+  var telegram = "https://t.me/zeusproxychannel";
+  var message = "https://www.facebook.com/messages/t/106013849206579";
+  var skype = "https://join.skype.com/invite/vX2UUFGxPiwu";
+  var email = "zeusproxyglobal@gmail.com";
+  var whatsapp = "https://t.me/zeusproxychannel";
+  var dashboard = "https://socks.proxysale.network";
+  var policy =
+    "https://docs.google.com/document/d/1WOJx3vPr9puuZbXJBttmUGM-iOnc8re83NXR71NCmHE/edit?usp=sharing";
+  var refund =
+    "https://docs.google.com/document/d/1B8QP9PJSGm2allmv0ugAukvHSMJgnqVqdYLtcJwj97g/edit?usp=sharing";
+  var termOfService =
+    "https://docs.google.com/document/d/1NOA4TG5b6loFphr6P9Z3Di6m9b1CN1GM9qW0vcF-Tgo/edit?usp=sharing";
+</script>
+<script type="text/javascript">
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = "f196141c-eaae-428a-8652-f6036278db97";
+  (function () {
+    d = document;
+    s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+  function closeChatbox(event) {
+    const classes =
+      event.target && event.target.className
+        ? typeof event.target.className == "string"
+          ? event.target.className
+          : JSON.stringify(event.target.className)
+        : "";
+    if (classes.includes("chat-open")) return;
+
+    const crispChat = document.querySelector(
+      '#crisp-chatbox a[role="button"][data-visible="true"][aria-label="Close chat"]'
+    );
+    if (crispChat) crispChat.click();
+  }
+  setTimeout(() => {
+    const elements = document.querySelectorAll("#crisp-chatbox a");
+    if (elements.length > 0) {
+      elements.forEach((e) => {
+        if (
+          e.getAttribute("href") &&
+          e.getAttribute("href").includes("https://crisp.chat")
+        ) {
+          e.setAttribute("style", "display:none !important");
+        }
+      });
+    }
+    document
+      .querySelector("#home")
+      .addEventListener("click", closeChatbox, false);
+
+    window.onunload = function () {
+      document
+        .querySelector("#home")
+        .removeEventListener("click", closeChatbox, false);
+    };
+  }, 2000);
+</script>
