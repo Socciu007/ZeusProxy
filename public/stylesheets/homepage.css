@@ -24,9 +24,30 @@
   }
 }
 
-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
+header .banner-sale {
+  text-align: center;
+  background: linear-gradient(90deg, #ed3600, #ffd325);
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+header .banner-sale img {
+  width: 100%;
+  max-width: 1400px;
+  max-height: 80px;
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  header .banner-sale img {
+    width: calc(100% + 100px);
+    margin-left: -50px;
+  }
+}
+@media (max-width: 567px) {
+  header .banner-sale img {
+    width: calc(100% + 200px);
+    margin-left: -120px;
+  }
 }
 header .logoimg {
   height: 50px;
@@ -89,8 +110,6 @@ header .navbar-nav .btnSignin {
 
 .headerBG {
   background: #fff;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 .headerBG .logoimg {
   height: 40px;
