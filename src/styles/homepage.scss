@@ -101,6 +101,7 @@ header {
 }
 .headerBG {
   background: #fff;
+  box-shadow: 0px 2px 5px rgba(8, 35, 106, 0.05);
   // padding-top: 5px;
   // padding-bottom: 5px;
   .logoimg {
@@ -836,9 +837,24 @@ header {
       justify-content: flex-start;
       background-color: #fafcff;
       border-radius: 20px;
-      overflow: hidden;
+      // overflow: hidden;
       width: calc(100% - 30px);
       margin: auto;
+      position: relative;
+      .big-sale {
+        width: 20%;
+        position: absolute;
+        top: -30px;
+        left: -20px;
+        user-select: none;
+        -webkit-user-drag: none;
+        @media (min-width: 1100px) {
+          left: -25px;
+        }
+        @media (min-width: 1300px) {
+          left: -30px;
+        }
+      }
       .head-pricing {
         background: #f3f8fe;
       }
@@ -996,6 +1012,7 @@ header {
       .packagePrice {
         justify-content: center;
         align-items: flex-end;
+        flex-wrap: wrap;
       }
       .packagePrice {
         .price {
@@ -1005,6 +1022,16 @@ header {
           line-height: 45px;
           @media (min-width: 1100px) {
             font-size: 35px;
+          }
+        }
+        .price2 {
+          font-size: 25px;
+          line-height: 40px;
+          color: rgba(23, 50, 148, 0.5);
+          text-decoration: line-through;
+          margin-right: 8px;
+          @media (min-width: 1100px) {
+            line-height: 35px;
           }
         }
         .unit {
@@ -1031,6 +1058,9 @@ header {
         @media (min-width: 1100px) {
           font-size: 18px;
         }
+      }
+      .unit {
+        width: 100%;
       }
     }
     .pricingItemMost {

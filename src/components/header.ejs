@@ -13,20 +13,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <a class="nav-link nav-home fw-bold" onclick="srollToSection('#home')">
+        <a class="nav-link nav-home fw-bold" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          onclick="srollToSection('#home')">
           HOME
         </a>
-        <a class="nav-link nav-usecases" onclick="srollToSection('#usecases')">
+        <a class="nav-link nav-usecases" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          onclick="srollToSection('#usecases')">
           USE CASES
         </a>
-        <a class="nav-link nav-features" onclick="srollToSection('#features')">
+        <a class="nav-link nav-features" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          onclick="srollToSection('#features')">
           FEATURES
         </a>
-        <a class="nav-link nav-pricing" onclick="srollToSection('#pricing')">
+        <a class="nav-link nav-pricing" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          onclick="srollToSection('#pricing')">
           PRICING
         </a>
-        <a class="nav-link nav-faq" onclick="srollToSection('#faq')"> FAQ </a>
-        <a href="https://app.zeusproxy.com/" target="_blank" class="btnSignin">
+        <a class="nav-link nav-faq" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          onclick="srollToSection('#faq')"> FAQ </a>
+        <a href="https://app.zeusproxy.com/" target="_blank" data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show" class="btnSignin">
           SIGN IN
         </a>
       </ul>
@@ -40,7 +46,7 @@
       return;
     }
     const section = document.querySelector(id);
-    let space = 50;
+    let space = 100;
     if (window.innerWidth < 992) space = 300;
     window.scrollTo(0, section.offsetTop - space);
   }
@@ -49,10 +55,10 @@
   let pricing = 0;
   let faq = 0;
   document.addEventListener("DOMContentLoaded", () => {
-    usecases = document.querySelector("#usecases").offsetTop - 90;
-    features = document.querySelector("#features").offsetTop - 90;
-    pricing = document.querySelector("#pricing").offsetTop - 90;
-    faq = document.querySelector("#faq").offsetTop - 90;
+    usecases = document.querySelector("#usecases").offsetTop - 100;
+    features = document.querySelector("#features").offsetTop - 100;
+    pricing = document.querySelector("#pricing").offsetTop - 100;
+    faq = document.querySelector("#faq").offsetTop - 100;
   });
   window.addEventListener("scroll", (event) => {
     const header = document.querySelector("header");
