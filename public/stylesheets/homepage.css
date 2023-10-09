@@ -868,6 +868,9 @@ header .navbar-nav .btnSignin {
 }
 .main .packages .packages-row-body .head-pricing {
   background: #f3f8fe;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .main .packages .packages-row-body .pricingItemMost {
   border-bottom-left-radius: 20px;
@@ -1118,6 +1121,7 @@ header .navbar-nav .btnSignin {
 }
 .main .packages .pricingItem .package {
   font-size: 16px;
+  border-bottom: 1px solid transparent;
 }
 @media (min-width: 1100px) {
   .main .packages .pricingItem .package {

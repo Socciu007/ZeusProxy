@@ -857,6 +857,9 @@ header {
       }
       .head-pricing {
         background: #f3f8fe;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
       }
       .pricingItemMost {
         border-bottom-left-radius: 20px;
@@ -1055,6 +1058,7 @@ header {
       }
       .package {
         font-size: 16px;
+        border-bottom: 1px solid transparent;
         @media (min-width: 1100px) {
           font-size: 18px;
         }
