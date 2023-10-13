@@ -811,6 +811,107 @@ header {
       opacity: 1;
     }
   }
+  .rotating-proxy {
+    display: inline-flex;
+    margin: auto;
+    border-radius: 25px;
+    background: rgba(212, 231, 255, 0.3);
+    padding: 5px;
+    gap: 5px;
+    margin: 30px 10px 30px;
+    flex-direction: column;
+    @media (min-width: 699px){
+      flex-direction: row;
+    }
+    @media (max-width: 500px) {
+      width: calc(100% - 20px);
+    }
+    button {
+      border-radius: 25px;
+      background: transparent;
+      border: none;
+      opacity: 0.3;
+      color: #01162b;
+      font-size: 15px;
+      font-weight: 700;
+      width: 100%;
+      font-family: "Google Sans Bold";
+      &.active {
+        background: #fff;
+        box-shadow: 0px 4px 4px 0px #d4e7ff;
+        color: #faa300;
+        opacity: 1;
+      }
+
+      padding: 10px 30px;
+      @media (max-width: 500px) {
+        padding: 10px 20px;
+      }
+      @media (min-width: 699px) {
+        padding: 10px 20px;
+        width: auto;
+      }
+      @media (min-width: 768px) {
+        padding: 10px 30px;
+      }
+    }
+    img.position-absolute {
+      top: 0;
+      bottom: 10px;
+      margin: auto;
+      right: -92%;
+      user-select: none;
+      -webkit-user-drag: none;
+
+      height: 120px;
+      right: -55%;
+      @media (max-width: 500px) {
+        display: none;
+      }
+      @media (min-width: 699px) {
+        height: 120px;
+        right: -76%;
+      }
+      @media (min-width: 768px) {
+        height: 150px;
+        right: -86%;
+      }
+    }
+  }
+  .benefit-packages {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 15px;
+    gap: 3%;
+    justify-content: space-between;
+
+    & > div {
+      gap: 10px;
+      margin: 10px 0 0;
+    }
+    svg {
+      width: 20px;
+    }
+    
+    @media (min-width: 500px) {
+      justify-content: center;
+    }
+    @media (min-width: 836px) {
+      & > div {
+        width: auto;
+      }
+    }
+    @media (min-width: 992px) {
+      gap: 5%;
+      & > div {
+        gap: 20px;
+      }
+      svg {
+        width: 25px;
+      }
+    }
+  }
   .packages {
     width: 100%;
     padding: 20px 0 50px;
@@ -823,8 +924,8 @@ header {
       width: calc(100% - 30px);
       margin: auto;
       .pricingItem {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
       }
       display: none;
       @media (min-width: 900px) {
@@ -862,8 +963,8 @@ header {
         justify-content: flex-end;
       }
       .pricingItemMost {
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
       }
       @media (min-width: 900px) {
         display: flex;

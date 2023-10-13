@@ -46,13 +46,14 @@ app.set("view engine", "ejs");
 // });
 
 app.get("/", async (req, res) => {
-  let packages = packagePrices;
+  // let packages = packagePrices;
   // const response = await axios.get("https://api.zeusproxy.com/rates/home");
   // if (response && response.data && response.data.success) {
+  // console.log(response);
   //   packages = response.data.result;
   // }
   res.render(path.join(__dirname, "views/index.ejs"), {
-    packages,
+    packagePrices,
     questions,
   });
 });
