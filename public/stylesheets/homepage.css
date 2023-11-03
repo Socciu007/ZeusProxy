@@ -875,7 +875,7 @@ header .navbar-nav .btnSignin {
   user-select: none;
   -webkit-user-drag: none;
   height: 120px;
-  right: -55%;
+  right: -58%;
 }
 @media (max-width: 500px) {
   .main .rotating-proxy img.position-absolute {

@@ -244,10 +244,9 @@
 
     <script>
         var packagePrices = <%- JSON.stringify(packagePrices) %>;
-        packagePrices = JSON.parse(packagePrices)
+        if(typeof packagePrices == "string") packagePrices = JSON.parse(packagePrices)
         function rotatingProxy(key) {
             const packages = packagePrices[key]
-            console.log(packages)
             const rowHead = document.querySelector(".packages-row-head")
             const benefitPackages = document.querySelector(".benefit-packages")
 
