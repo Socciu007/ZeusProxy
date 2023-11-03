@@ -24,9 +24,30 @@
   }
 }
 
-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
+header .banner-sale {
+  text-align: center;
+  background: linear-gradient(90deg, #ed3600, #ffd325);
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+header .banner-sale img {
+  width: 100%;
+  max-width: 1400px;
+  max-height: 80px;
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  header .banner-sale img {
+    width: calc(100% + 100px);
+    margin-left: -50px;
+  }
+}
+@media (max-width: 567px) {
+  header .banner-sale img {
+    width: calc(100% + 200px);
+    margin-left: -120px;
+  }
 }
 header .logoimg {
   height: 50px;
@@ -89,8 +110,7 @@ header .navbar-nav .btnSignin {
 
 .headerBG {
   background: #fff;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  box-shadow: 0px 2px 5px rgba(8, 35, 106, 0.05);
 }
 .headerBG .logoimg {
   height: 40px;
@@ -793,6 +813,123 @@ header .navbar-nav .btnSignin {
   box-shadow: 0px 4px 10px rgba(1, 22, 43, 0.1) !important;
   opacity: 1;
 }
+.main .rotating-proxy {
+  display: inline-flex;
+  margin: auto;
+  border-radius: 25px;
+  background: rgba(212, 231, 255, 0.3);
+  padding: 5px;
+  gap: 5px;
+  margin: 30px 10px 30px;
+  flex-direction: column;
+}
+@media (min-width: 699px) {
+  .main .rotating-proxy {
+    flex-direction: row;
+  }
+}
+@media (max-width: 500px) {
+  .main .rotating-proxy {
+    width: calc(100% - 20px);
+  }
+}
+.main .rotating-proxy button {
+  border-radius: 25px;
+  background: transparent;
+  border: none;
+  opacity: 0.3;
+  color: #01162b;
+  font-size: 15px;
+  font-weight: 700;
+  width: 100%;
+  font-family: "Google Sans Bold";
+  padding: 10px 30px;
+}
+.main .rotating-proxy button.active {
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px #d4e7ff;
+  color: #faa300;
+  opacity: 1;
+}
+@media (max-width: 500px) {
+  .main .rotating-proxy button {
+    padding: 10px 20px;
+  }
+}
+@media (min-width: 699px) {
+  .main .rotating-proxy button {
+    padding: 10px 20px;
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .main .rotating-proxy button {
+    padding: 10px 30px;
+  }
+}
+.main .rotating-proxy img.position-absolute {
+  top: 0;
+  bottom: 10px;
+  margin: auto;
+  right: -92%;
+  user-select: none;
+  -webkit-user-drag: none;
+  height: 120px;
+  right: -58%;
+}
+@media (max-width: 500px) {
+  .main .rotating-proxy img.position-absolute {
+    display: none;
+  }
+}
+@media (min-width: 699px) {
+  .main .rotating-proxy img.position-absolute {
+    height: 120px;
+    right: -76%;
+  }
+}
+@media (min-width: 768px) {
+  .main .rotating-proxy img.position-absolute {
+    height: 150px;
+    right: -86%;
+  }
+}
+.main .benefit-packages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 15px;
+  gap: 3%;
+  justify-content: space-between;
+}
+.main .benefit-packages > div {
+  gap: 10px;
+  margin: 10px 0 0;
+}
+.main .benefit-packages svg {
+  width: 20px;
+}
+@media (min-width: 500px) {
+  .main .benefit-packages {
+    justify-content: center;
+  }
+}
+@media (min-width: 836px) {
+  .main .benefit-packages > div {
+    width: auto;
+  }
+}
+@media (min-width: 992px) {
+  .main .benefit-packages {
+    gap: 5%;
+  }
+  .main .benefit-packages > div {
+    gap: 20px;
+  }
+  .main .benefit-packages svg {
+    width: 25px;
+  }
+}
 .main .packages {
   width: 100%;
   padding: 20px 0 50px;
@@ -810,8 +947,8 @@ header .navbar-nav .btnSignin {
   display: none;
 }
 .main .packages .packages-row-head .pricingItem {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 @media (min-width: 900px) {
   .main .packages .packages-row-head {
@@ -824,16 +961,37 @@ header .navbar-nav .btnSignin {
   justify-content: flex-start;
   background-color: #fafcff;
   border-radius: 20px;
-  overflow: hidden;
   width: calc(100% - 30px);
   margin: auto;
+  position: relative;
+}
+.main .packages .packages-row-body .big-sale {
+  width: 20%;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+@media (min-width: 1100px) {
+  .main .packages .packages-row-body .big-sale {
+    left: -25px;
+  }
+}
+@media (min-width: 1300px) {
+  .main .packages .packages-row-body .big-sale {
+    left: -30px;
+  }
 }
 .main .packages .packages-row-body .head-pricing {
   background: #f3f8fe;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .main .packages .packages-row-body .pricingItemMost {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 @media (min-width: 900px) {
   .main .packages .packages-row-body {
@@ -1007,7 +1165,7 @@ header .navbar-nav .btnSignin {
   border-bottom: none;
 }
 .main .packages .head-pricing .packagePrice {
-  min-height: 45px;
+  min-height: 55px;
 }
 @media (min-width: 1100px) {
   .main .packages .head-pricing .package,
@@ -1027,6 +1185,7 @@ header .navbar-nav .btnSignin {
 .main .packages .pricingItem2 .packagePrice {
   justify-content: center;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 .main .packages .pricingItem .packagePrice .price,
 .main .packages .pricingItem2 .packagePrice .price {
@@ -1039,6 +1198,20 @@ header .navbar-nav .btnSignin {
   .main .packages .pricingItem .packagePrice .price,
   .main .packages .pricingItem2 .packagePrice .price {
     font-size: 35px;
+  }
+}
+.main .packages .pricingItem .packagePrice .price2,
+.main .packages .pricingItem2 .packagePrice .price2 {
+  font-size: 25px;
+  line-height: 40px;
+  color: rgba(23, 50, 148, 0.5);
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+@media (min-width: 1100px) {
+  .main .packages .pricingItem .packagePrice .price2,
+  .main .packages .pricingItem2 .packagePrice .price2 {
+    line-height: 35px;
   }
 }
 .main .packages .pricingItem .packagePrice .unit,
@@ -1065,11 +1238,15 @@ header .navbar-nav .btnSignin {
 }
 .main .packages .pricingItem .package {
   font-size: 16px;
+  border-bottom: 1px solid transparent;
 }
 @media (min-width: 1100px) {
   .main .packages .pricingItem .package {
     font-size: 18px;
   }
+}
+.main .packages .pricingItem .unit {
+  width: 100%;
 }
 .main .packages .pricingItemMost {
   background-color: #fdf4e6 !important;
