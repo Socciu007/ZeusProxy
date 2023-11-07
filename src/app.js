@@ -66,6 +66,9 @@ app.get("/privacy-policy", (req, res) => {
 app.get("/refund-policy", (req, res) => {
   res.render(path.join(__dirname, "views/refund-policy.ejs"));
 });
+app.get("/blog", (req, res) => {
+  res.render(path.join(__dirname, "views/blogs.ejs"));
+});
 
 app.listen(port, () => {
   console.log(`App listening at port ${port}`);
