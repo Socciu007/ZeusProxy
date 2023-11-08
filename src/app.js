@@ -69,6 +69,9 @@ app.get("/refund-policy", (req, res) => {
 app.get("/blog", (req, res) => {
   res.render(path.join(__dirname, "views/blogs.ejs"));
 });
+app.get("/post", (req, res) => {
+  res.render(path.join(__dirname, "views/post.ejs"));
+});
 
 app.listen(port, () => {
   console.log(`App listening at port ${port}`);
