@@ -4,7 +4,12 @@ const axios = require("axios");
 const app = express();
 const packagePrices = require("./resources/package-prices.json");
 const questions = require("./resources/faq.json");
+const connectDB = require("./configdb");
+const crudBlog = require("./crudBlog");
 const port = 8080;
+
+//Connect MongoDB
+connectDB();
 
 // Register ejs as .html. If we did
 // not call this, we would need to
@@ -66,12 +71,13 @@ app.get("/privacy-policy", (req, res) => {
 app.get("/refund-policy", (req, res) => {
   res.render(path.join(__dirname, "views/refund-policy.ejs"));
 });
-app.get("/blog", (req, res) => {
-  res.render(path.join(__dirname, "views/blogs.ejs"));
-});
+// app.get("/blog", (req, res) => {
+//   res.render(path.join(__dirname, "views/blogs.ejs"));
+// });
 app.get("/post", (req, res) => {
   res.render(path.join(__dirname, "views/post.ejs"));
 });
+app.use("/blog", crudBlog);
 
 app.listen(port, () => {
   console.log(`App listening at port ${port}`);
