@@ -5,7 +5,7 @@ const app = express();
 const packagePrices = require("./resources/package-prices.json");
 const questions = require("./resources/faq.json");
 const connectDB = require("./configdb");
-const BlogCRUD = require("./BlogCRUD");
+const routes = require("./BlogCRUD");
 const port = 8080;
 
 //Connect MongoDB
@@ -77,7 +77,9 @@ app.get("/refund-policy", (req, res) => {
 app.get("/post", (req, res) => {
   res.render(path.join(__dirname, "views/post.ejs"));
 });
-app.use("/blog", BlogCRUD);
+
+routes(app);
+// app.use("/blog", BlogCRUD);
 
 app.listen(port, () => {
   console.log(`App listening at port ${port}`);

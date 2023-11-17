@@ -65,4 +65,8 @@ router.delete("/delete/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+const routes = (app) => {
+  app.use("/blog", router);
+};
+
+module.exports = routes;
