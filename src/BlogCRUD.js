@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const router = express.Router();
-const Blog = require("./modelBlog");
+const Blog = require("./BlogModel");
+const BlogService = require("./BlogService");
 
 router.get("/", async (req, res) => {
   try {
@@ -20,7 +21,6 @@ router.get("/", async (req, res) => {
 router.post("/create", async (req, res) => {
   try {
     const { title, description, image } = req.body;
-    console.log(req.body);
 
     if (!title || !description || !image) {
       return res.status(400).json({
@@ -29,49 +29,35 @@ router.post("/create", async (req, res) => {
       });
     }
 
-    const blogs = await Blog.create({ title, description, image });
-    if (blogs) {
-      return res.status(200).json({
-        status: "OK",
-        data: blogs,
-      });
-    }
-    // res.render(path.join(__dirname, "views/blog.ejs"), {
-    //     blogs: blogs,
-    // });
+    const response = await BlogService.createBlog(req.body);
+    return res.status(200).json(response);
   } catch (error) {
-    console.log(req.body);
     res.status(404).json({
-      status: "ERR",
-      message: "Loi khi lay du lieu MongoDB",
+      status: error,
     });
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/update/:id", async (req, res) => {
   try {
     const blogId = req.params.id;
     const data = req.body;
 
-    const blog = await Blog.findOne({
-      _id: id,
+    const response = await BlogService.updateBlog(blogId, data);
+    return res.status(200).json(response);
+  } catch (error) {
+    res.status(404).json({
+      status: error,
     });
+  }
+});
 
-    if (blog === null) {
-      resolve({
-        status: "ERR",
-        message: "The blog is not exist",
-      });
-    }
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    const blogId = req.params.id;
 
-    const updatedBlog = await Blog.findByIdAndUpdate(blogId, data, {
-      new: true,
-    });
-    return res.status(200).json({
-      status: "OK",
-      message: "Success",
-      data: updatedBlog,
-    });
+    const response = await BlogService.deleteBlog(blogId);
+    return res.status(200).json(response);
   } catch (error) {
     res.status(404).json({
       status: error,

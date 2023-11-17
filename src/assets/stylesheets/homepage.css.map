@@ -1,1 +1,10 @@
-{"version":3,"sourceRoot":"","sources":["../../src/styles/homepage.scss"],"names":[],"mappings":"AAAA;EACE","file":"homepage.css"}
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "../../src/styles/homepage.scss"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACE",
+  "file": "homepage.css"
+}

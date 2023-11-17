@@ -2,6 +2,32 @@
     description: ""
     , more: '' }) %>
 <%- include('../components/header') %>
+<style>
+    .blog {
+        .search-content:focus {
+            outline: none;
+            border-color: transparent;
+        }
+    }
+    .container-blog {
+        .container-wrapper {
+            @media (min-width: 1400px) {
+                max-width: 1400px;
+            }
+        }
+        .blog-content {
+            margin-left: 4rem;
+        }
+        .blog-image {
+            height: 264px;
+            margin-right: 4rem;
+        }
+        .blog-btn {
+            padding-left: 18px; 
+            padding-top: 5px; 
+        }
+}
+</style>
 <div class="blog">
     <div class="blog-wrap container">
         <div class="header-wrap">
@@ -24,28 +50,12 @@
     </div>
 
     <div class="container-blog">
-        <div class="container">
-            <div class="blog-item first-item">
-                <% for (blog of blogs) { %>
-                <div class="blog-content">
-                    <h3 class="blog-title">What is proxy?</h3>
-                    <p class="blog-detail">Simply put, you recommend a product or service to your audience. If they buy based on your recommendation, the product owner pays you a cut of what they earned. When done ethically—meaning you only recommend tools you truly believe will help your audience—affiliate marketing is a great way to start generating an income for your business.</p>
-                    <div class="blog-button">
-                        <div class="blog-btn">
-                            <button class="btn">proxy</button>
-                        </div>
-                        <div class="blog-btn">
-                            <button class="btn">proxy</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-image"></div>
-                <% } %>
-            </div>
+        <div class="container container-wrapper">
+            <% for (blog of blogs) { %>
             <div class="blog-item">
                 <div class="blog-content">
-                    <h3 class="blog-title">What is proxy?</h3>
-                    <p class="blog-detail">Simply put, you recommend a product or service to your audience. If they buy based on your recommendation, the product owner pays you a cut of what they earned. When done ethically—meaning you only recommend tools you truly believe will help your audience—affiliate marketing is a great way to start generating an income for your business.</p>
+                    <h3 class="blog-title"><%= blog.title %></h3>
+                    <p class="blog-detail"><%= blog.description %></p>
                     <div class="blog-button">
                         <div class="blog-btn">
                             <button class="btn">proxy</button>
@@ -57,36 +67,7 @@
                 </div>
                 <div class="blog-image"></div>
             </div>
-            <div class="blog-item">
-                <div class="blog-content">
-                    <h3 class="blog-title">What is proxy?</h3>
-                    <p class="blog-detail">Simply put, you recommend a product or service to your audience. If they buy based on your recommendation, the product owner pays you a cut of what they earned. When done ethically—meaning you only recommend tools you truly believe will help your audience—affiliate marketing is a great way to start generating an income for your business.</p>
-                    <div class="blog-button">
-                        <div class="blog-btn">
-                            <button class="btn">proxy</button>
-                        </div>
-                        <div class="blog-btn">
-                            <button class="btn">proxy</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-image"></div>
-            </div>
-            <div class="blog-item">
-                <div class="blog-content">
-                    <h3 class="blog-title">What is proxy?</h3>
-                    <p class="blog-detail">Simply put, you recommend a product or service to your audience. If they buy based on your recommendation, the product owner pays you a cut of what they earned. When done ethically—meaning you only recommend tools you truly believe will help your audience—affiliate marketing is a great way to start generating an income for your business.</p>
-                    <div class="blog-button">
-                        <div class="blog-btn">
-                            <button class="btn">proxy</button>
-                        </div>
-                        <div class="blog-btn">
-                            <button class="btn">proxy</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-image"></div>
-            </div>
+            <% } %>
         </div>
     </div>
     
