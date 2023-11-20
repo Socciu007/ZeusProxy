@@ -1,7 +1,7 @@
-<%- include('../components/head', {title: "Zeus Proxy - Blog" ,
+<%- include('../../components/head', {title: "Zeus Proxy - Blog" ,
     description: ""
     , more: '' }) %>
-<%- include('../components/header') %>
+<%- include('../../components/header') %>
 <style>
     .blog {
         .search-content:focus {
@@ -25,6 +25,9 @@
         .blog-btn {
             padding-left: 18px; 
             padding-top: 5px; 
+        }
+        .blog-title {
+            cursor: pointer;
         }
 }
 </style>
@@ -54,7 +57,7 @@
             <% for (blog of blogs) { %>
             <div class="blog-item">
                 <div class="blog-content">
-                    <h3 class="blog-title"><%= blog.title %></h3>
+                    <h3 id="goToPost" class="blog-title"><%= blog.title %></h3>
                     <p class="blog-detail"><%= blog.description %></p>
                     <div class="blog-button">
                         <div class="blog-btn">
@@ -72,4 +75,9 @@
     </div>
     
 </div>
-<%- include('../components/footer') %>
+<%- include('../../components/footer') %>
+<script>
+    document.getElementById('goToPost').addEventListener('click', function() {
+      window.location.href = '/post';
+    });
+</script>

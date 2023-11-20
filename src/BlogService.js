@@ -85,6 +85,7 @@ const getDetailsBlog = async (id) => {
 const createBlog = async (newBlog) => {
   return new Promise(async (resolve, reject) => {
     const { title, description, image } = newBlog;
+    console.log("data", title, description, image);
     try {
       const checkBlog = await Blog.find({
         title: title,

@@ -71,13 +71,12 @@ app.get("/privacy-policy", (req, res) => {
 app.get("/refund-policy", (req, res) => {
   res.render(path.join(__dirname, "views/refund-policy.ejs"));
 });
-// app.get("/blog", (req, res) => {
-//   res.render(path.join(__dirname, "views/blogs.ejs"));
-// });
-app.get("/post", (req, res) => {
-  res.render(path.join(__dirname, "views/post.ejs"));
+app.get("/admin-blog", (req, res) => {
+  res.render(path.join(__dirname, "views/blogs/index.ejs"));
 });
-
+app.get("/admin-blog/post", (req, res) => {
+  res.render(path.join(__dirname, "views/blogs/post-blog.ejs"));
+});
 routes(app);
 // app.use("/blog", BlogCRUD);
 
