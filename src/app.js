@@ -4,12 +4,8 @@ const axios = require("axios");
 const app = express();
 const packagePrices = require("./resources/package-prices.json");
 const questions = require("./resources/faq.json");
-const connectDB = require("./configdb");
-const routes = require("./BlogCRUD");
+const blogs = require("./resources/blog.json");
 const port = 8080;
-
-//Connect MongoDB
-connectDB();
 
 // Register ejs as .html. If we did
 // not call this, we would need to
@@ -71,14 +67,14 @@ app.get("/privacy-policy", (req, res) => {
 app.get("/refund-policy", (req, res) => {
   res.render(path.join(__dirname, "views/refund-policy.ejs"));
 });
-app.get("/admin-blog", (req, res) => {
-  res.render(path.join(__dirname, "views/blogs/index.ejs"));
+app.get("/blogs", (req, res) => {
+  res.render(path.join(__dirname, "views/blogs/blogs.ejs"), {
+    blogs: blogs,
+  });
 });
-app.get("/admin-blog/post", (req, res) => {
-  res.render(path.join(__dirname, "views/blogs/post-blog.ejs"));
+app.get("/blogs-detail", (req, res) => {
+  res.render(path.join(__dirname, "views/blogs/post.ejs"));
 });
-routes(app);
-// app.use("/blog", BlogCRUD);
 
 app.listen(port, () => {
   console.log(`App listening at port ${port}`);
